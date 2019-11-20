@@ -6,11 +6,15 @@ const Video = require ('../models/video');
 
 const db = "mongodb+srv:/dbuser:<dbpassword>@videoplayer-rxz1p.mongodb.net/test?retryWrites=true&w=majority"
 mongoose.Promise = global.Promise;
+
+mongoose.connect(db, {useNewUrlParser: true});
+/*
 mongoose.connect(db, function(err){
     if(err){
         console.error("Error! " + err);
     }
 });
+*/
 //Calling video db 
 router.get('/videos', function(req, res){
     console.log('Get request for all videos');
